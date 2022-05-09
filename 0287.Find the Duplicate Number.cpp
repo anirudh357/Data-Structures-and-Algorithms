@@ -28,8 +28,9 @@ public:
 
 
 // 287.✅ Find the Duplicate Number
-
-/*
+    
+/* 
+Discussion link :- https://leetcode.com/problems/find-the-duplicate-number/discuss/1892872/C%2B%2B-oror-Algorithm-oror-4-Approaches-oror-Binary-Search-oror-Brute-Force-oror-cnt-array-oror-map
 Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
 There is only one repeated number in nums, return this repeated number.
 You must solve the problem without modifying the array nums and uses only constant extra space.
