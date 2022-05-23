@@ -1,0 +1,39 @@
+class Solution {
+public:
+    //Since it is passed by reference, we don't have to return anything. 
+    void setZeroes(vector<vector<int>>& matrix) {
+        int col0=1, rows=matrix.size(), cols=matrix[0].size();
+        
+        for(int i=0;i<rows;i++)
+        {
+            if(matrix[i][0]==0)       //for 1st column or zeroth column, if it is 0
+            {
+                col0=0;               // then set to false
+            }   
+            // Now for rest of the columns
+            for(int j=1;j<cols;j++)
+            {
+                if(matrix[i][j]==0)   //if the i and jth element is 0, then set the left and right elements as 0 from that element
+                {
+                    matrix[i][0]=matrix[0][j]=0;
+                }    
+            }    
+            
+        }    
+        //Now backtracking
+        for(int i=rows-1;i>=0;i--)
+        {
+            for(int j=cols-1;j>=1;j--)
+            {
+                if(matrix[i][0]==0 || matrix[0][j]==0)
+                {
+                    matrix[i][j]=0;
+                }    
+            }    
+            if(col0==0 )                         //if col0 was false
+                {
+                    matrix[i][0]=0;
+                }    
+        }    
+    }
+};
