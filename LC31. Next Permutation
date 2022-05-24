@@ -1,0 +1,37 @@
+Problem Link: https://leetcode.com/problems/next-permutation/
+
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+          int n, l, k;
+          n=nums.size();     //First we will see the size of array.
+          //Then we will iterate from the backwards, 2nd last element if there is a breakpoint between numbers.
+          for(k=n-2;k>=0;k--)
+          {
+              if(nums[k]<nums[k+1])
+              {
+                  break;
+              }    
+          }    
+          
+          // If there is no breakpoint
+          if(k<0)
+          {
+              reverse(nums.begin(), nums.end());
+          }
+         // If remaining breakpoint
+          else
+          {    
+               for(l=n-1;l>k;l--)
+               {
+                      if(nums[l]>nums[k])
+                      {
+                          break;   
+                      }
+               }          
+          swap(nums[k], nums[l]);
+          reverse(nums.begin()+k+1, nums.end());
+          //Reverse STL function, or we can do with two pointers system.   
+          }    
+    }
+};
