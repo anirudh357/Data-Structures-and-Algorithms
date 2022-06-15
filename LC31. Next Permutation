@@ -1,4 +1,4 @@
-Problem Link: https://leetcode.com/problems/next-permutation/
+Link: https://leetcode.com/problems/next-permutation/
 
 class Solution {
 public:
